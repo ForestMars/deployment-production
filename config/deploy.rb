@@ -14,8 +14,9 @@ set :deploy_to, "/var/www/#{ENV['LOCATION']}/#{ENV['TYPE']}"
 set :gfs_location, "/mnt/gfs"
 ssh_options[:forward_agent] = true
 
-role :web, "www1.localvox.com"
-role :web, "www2.localvox.com"
+
+role :web, "www1.site.com"
+role :web, "www2.site.com"
 
 after "deploy", "deploy:symlink_files_dir"
 after "deploy", "deploy:cut_tag"
